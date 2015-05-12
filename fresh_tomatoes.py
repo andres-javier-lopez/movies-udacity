@@ -54,9 +54,7 @@ def create_movie_tiles_content(movies):
         # If actors are provided, create an actor list
         actors_list = []
         for actor in movie.actors:
-            actors_list.append(
-                '<li class="list-group-item actor-item">%s</li>' % actor
-            )
+            actors_list.append(actor + '<br/>')
         if actors_list:
             actors_str = ''.join(actors_list)
             actors = templates.MOVIE_TILE_ACTORS.format(

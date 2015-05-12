@@ -57,15 +57,6 @@ MAIN_PAGE_HEAD = '''
                 top: 0;
                 background-color: white;
             }
-            .actors-list {
-                list-style-type: none;
-                padding: 0px;
-                margin: 0px;
-            }
-            .actor-item {
-                border: none;
-                z-index: 5;
-            }
         </style>
         <script type="text/javascript" charset="utf-8">
             // Pause the video when the modal is closed
@@ -91,6 +82,10 @@ MAIN_PAGE_HEAD = '''
                 $(this).next("div").show("fast", showNext);
               });
             });
+            // Activate the popover functionality
+            $(function () {
+              $('[data-toggle="popover"]').popover()
+            })
         </script>
     </head>
 '''
@@ -140,10 +135,6 @@ MOVIE_TILE_CONTENT = '''
 '''
 
 MOVIE_TILE_ACTORS = '''
-            <div class="panel-group" id="accordion-{movie}">
-                <a data-toggle="collapse" data-parent="accordion-{movie}" href="#collapseOne">Cast</a>
-                <div id="collapseOne" class="panel-collapse collapse">
-                <ul class="list-group actors-list">{actors_list}</ul>
-                </div>
-            </div>
+            <a type="button" class="btn btn-primary" data-toggle="popover"
+            data-content="{actors_list}" data-html="true">Cast</a>
 '''
