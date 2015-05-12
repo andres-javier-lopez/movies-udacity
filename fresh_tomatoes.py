@@ -38,12 +38,47 @@ def create_movie_tiles_content(movies):
             trailer_youtube_id = youtube_id_match.group(0)
         else:
             trailer_youtube_id = None
-
+        
+        # Append the year to the title if provided
+        if movie.year:
+            movie_title = '%s (%s)' % (movie.title, movie.year)
+        else:
+            movie_title = movie.title
+        
+        # Add the director info if provided
+        if movie.director:
+            director = '<br/><small>a film by %s</small>' % movie.director
+        else:
+            director = ''
+        
+        # If actors are provided, create an actor list
+        actors_list = []
+        for actor in movie.actors:
+            actors_list.append(
+                '<li class="list-group-item actor-item">%s</li>' % actor
+            )
+        if actors_list:
+            actors_str = ''.join(actors_list)
+            actors = (
+                '<div class="panel-group" id="accordion-{movie}">'
+                '<a data-toggle="collapse" data-parent="accordion-{movie}"'
+                ' href="#collapseOne">Cast</a>\n'
+                '<div id="collapseOne" class="panel-collapse collapse">\n'
+                '<ul class="list-group actors-list">{actors_list}</ul>\n'
+                '</div></div>'
+            ).format(movie=movie.title.replace(' ', '-').lower(),
+                     actors_list=actors_str)
+        else:
+            actors = ''
+        
         # Append the tile for the movie with its content filled in
         content_list.append(templates.MOVIE_TILE_CONTENT.format(
-            movie_title=movie.title,
+            movie_title=movie_title,
             poster_image_url=movie.poster_image_url,
-            trailer_youtube_id=trailer_youtube_id
+            trailer_youtube_id=trailer_youtube_id,
+            year=movie.year,
+            director=director,
+            actors=actors
         ))
     content = ''.join(content_list)
     return content
