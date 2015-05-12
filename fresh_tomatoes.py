@@ -59,15 +59,10 @@ def create_movie_tiles_content(movies):
             )
         if actors_list:
             actors_str = ''.join(actors_list)
-            actors = (
-                '<div class="panel-group" id="accordion-{movie}">'
-                '<a data-toggle="collapse" data-parent="accordion-{movie}"'
-                ' href="#collapseOne">Cast</a>\n'
-                '<div id="collapseOne" class="panel-collapse collapse">\n'
-                '<ul class="list-group actors-list">{actors_list}</ul>\n'
-                '</div></div>'
-            ).format(movie=movie.title.replace(' ', '-').lower(),
-                     actors_list=actors_str)
+            actors = templates.MOVIE_TILE_ACTORS.format(
+                movie=movie.title.replace(' ', '-').lower(),
+                actors_list=actors_str
+            )
         else:
             actors = ''
         

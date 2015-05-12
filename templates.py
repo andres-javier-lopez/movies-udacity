@@ -138,3 +138,12 @@ MOVIE_TILE_CONTENT = '''
             {actors}
         </div>
 '''
+
+MOVIE_TILE_ACTORS = '''
+            <div class="panel-group" id="accordion-{movie}">
+                <a data-toggle="collapse" data-parent="accordion-{movie}" href="#collapseOne">Cast</a>
+                <div id="collapseOne" class="panel-collapse collapse">
+                <ul class="list-group actors-list">{actors_list}</ul>
+                </div>
+            </div>
+'''
