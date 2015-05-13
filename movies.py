@@ -28,42 +28,49 @@ movies.append(media.Movie(
     "http://upload.wikimedia.org/wikipedia/en/1/13/Toy_Story.jpg",
     "https://www.youtube.com/watch?v=KYz2wyBy3kc",
     year='1995', director='John Lasseter',
-    actors=['Buzz', 'Woody']
+    actors=['Buzz  Lightyear', 'Woody']
 ))
 
 movies.append(media.Movie(
     "Avatar",
     "A marine on an alien planet",
     "https://www.movieposter.com/posters/archive/main/98/MPW-49433",
-    "https://www.youtube.com/watch?v=5PSNL1qE6VY"
+    "https://www.youtube.com/watch?v=5PSNL1qE6VY",
+    year='2009', director='James Cameron'
 ))
 
 movies.append(media.Movie(
     "Matrix",
     "A virtual world governed by machines",
     "https://www.movieposter.com/posters/archive/main/9/A70-4902",
-    "https://www.youtube.com/watch?v=vKQi3bBA1y8"
+    "https://www.youtube.com/watch?v=vKQi3bBA1y8",
+    year='1999',
+    actors=['Keanu Reeves', 'Lawrence Fishburne', 'Carrie-Anne Moss']
 ))
 
 movies.append(media.Movie(
     "Ratatouille",
     "A rat is a chef in Paris",
     "http://upload.wikimedia.org/wikipedia/en/5/50/RatatouillePoster.jpg",
-    "https://www.youtube.com/watch?v=c3sBBRxDAqk"
+    "https://www.youtube.com/watch?v=c3sBBRxDAqk",
+    year='2007', director='Brad Bird'
 ))
 
 movies.append(media.Movie(
     "Avengers",
     "A lot of superheroes in one movie",
     "http://upload.wikimedia.org/wikipedia/en/f/f9/TheAvengers2012Poster.jpg",
-    "https://www.youtube.com/watch?v=eOrNdBpGMv8"
+    "https://www.youtube.com/watch?v=eOrNdBpGMv8",
+    year='2012', director='Joss Whedon',
+    actors=['A lot of people']
 ))
 
 movies.append(media.Movie(
     "How to train your dragon",
     "A viking befriends a dragon",
     "http://upload.wikimedia.org/wikipedia/en/9/99/How_to_Train_Your_Dragon_Poster.jpg",
-    "www.youtube.com/watch?v=oKiYuIsPxYk"
+    "www.youtube.com/watch?v=oKiYuIsPxYk",
+    actors=['Jay Baruchel', 'Gerard Butler']
 ))
 
 # Add new movies in this space
